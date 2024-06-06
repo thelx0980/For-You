@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #e0e0e0;
+      color: #333;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .header {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #555;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px pink;
+    }
+
+    .content {
+      width: 90%;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      padding: 30px;
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .love-message {
+      font-size: 18px; /* Decreased font size */
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #333;
+      font-weight: bold; /* Made text bold */
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #ff69b4;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #e64980;
+    }
+
+    .footer {
+      width: 100%;
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+      display: none;
+    }
+
+    .footer-content {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .top-shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: linear-gradient(to bottom, rgba(255,192,203,0.5), transparent);
+    }
+
+    .bottom-shadow {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      background: linear-gradient(to top, rgba(255,192,203,0.5), transparent);
+    }
+
+    .side-shadow {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -20px;
+      width: 20px;
+      background: linear-gradient(to right, rgba(255,192,203,0.5), transparent);
+    }
+
+    .gap {
+      margin: 20px 0;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        height: 100vh;
+      }
+
+      .content:hover {
+        transform: translateY(-5px);
+      }
+    }
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .gallery img {
+        width: 200px;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer; /* Add cursor pointer */
+    }
+    .gallery img:hover {
+        transform: scale(1.1);
+    }
+        /* Fullscreen Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.9);
+    }
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 800px;
+    }
+    .close {
+        color: #fff;
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    .close:hover,
+    .close:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .music-player {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">For My Love</div>
+    <div class="gap"></div>
+    <div class="top-shadow"></div>
+    <div class="content">
+      <button class="cta-button">KRISHNA NIRAU</button>
+      <p class="love-message">Loading message...</p>
+    </div>
+    <div class="bottom-shadow"></div>
+    <div class="gap"></div>
+    <div class="gallery">
+      <img src="https://i.postimg.cc/7PzDjYW3/soldier.jpg" alt="Image 1" onclick="openModal('https://i.postimg.cc/7PzDjYW3/soldier.jpg')">
+      <img src="https://i.postimg.cc/ncYxcSZM/soldier1.jpg" alt="Image 2" onclick="openModal('https://i.postimg.cc/ncYxcSZM/soldier1.jpg')">
+      <img src="https://i.postimg.cc/FKnNXfvZ/soldier2.jpg" alt="Image 3" onclick="openModal('https://i.postimg.cc/FKnNXfvZ/soldier2.jpg')">
+      <img src="https://i.postimg.cc/ydMKWwk3/soldier3.jpg" alt="Image 4" onclick="openModal('https://i.postimg.cc/ydMKWwk3/soldier3.jpg')">
+      <img src="https://i.postimg.cc/wTdHz8CS/army6.jpg" alt="Image 5" onclick="openModal('https://i.postimg.cc/wTdHz8CS/army6.jpg')">
+    </div>
+    <!-- Fullscreen Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+    <div class="gap"></div>
+    <div class="music-player">
+      <audio controls>
+        <source src="https://thelxcode.github.io/AudioPlayer/music/Hare_Hare__Hum_to_dil_se_hare__-_Lofi_Song_%5BSlowed___Reverb%5D___ShariqueKhan___Nic_Lofi(256k).mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="gap"></div>
+    <button class="cta-button">12 December 2024</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('https://raw.githubusercontent.com/thelxcode/wallpaper/main/web.txt')
+        .then(response => response.text())
+        .then(text => {
+          const loveMessage = document.querySelector('.love-message');
+          loveMessage.innerHTML = text.replace(/\n/g, '<br>'); // Replacing newline characters with <br> tags
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Failed to fetch message. Please try again later.');
+        });
+    });
+    function openModal(imgSrc) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modalImg");
+        modal.style.display = "block";
+        modalImg.src = imgSrc;
+    }
+
+        // Close modal function
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>
