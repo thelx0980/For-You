@@ -79,10 +79,10 @@
 
       form.addEventListener('submit', function(event) {
         event.preventDefault();
-        const password = document.getElementById('password').value.toLowerCase();
+        let password = document.getElementById('password').value.trim().toLowerCase(); // Trim and convert to lowercase
         const validPasswords = ['jimmy', 'jim9my', 'krishna', 'krishna)@(9287₹+₹']; // List of valid passwords in any case
         if (validPasswords.includes(password)) {
-          window.location.href = 'home.html'; // Redirect to gff.html page
+          window.location.href = 'home.html'; // Redirect to home.html page
         } else {
           alert('Please enter your correct Instagram username.'); // Display error message if password is incorrect
         }
