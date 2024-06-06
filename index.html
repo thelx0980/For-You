@@ -67,7 +67,7 @@
     <div class="content">
       <p class="love-message">To verify that you are indeed the person I sent this link to, please enter your Instagram ID/username here</p>
       <form class="password-form">
-        <input type="text" id="password" placeholder="Enter password">
+        <input type="text" id="password" placeholder="Enter Instagram ID">
         <button type="submit" class="cta-button">Enter</button>
       </form>
     </div>
@@ -84,7 +84,7 @@
         if (validPasswords.includes(password)) {
           window.location.href = 'home.html'; // Redirect to gff.html page
         } else {
-          alert('Incorrect password. Please try again.'); // Display error message if password is incorrect
+          alert('Please enter your correct Instagram username.'); // Display error message if password is incorrect
         }
       });
     });
